@@ -1,0 +1,23 @@
+<div class="my-4">
+  <h2>Add Contact:</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="exampleInputName"
+        aria-describedby="nameHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+        aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPhone" class="form-label">Phone Number</label>
+      <input formControlName="phone" type="number" class="form-control" id="exampleInputPhone">
+    </div>
+    @if (contactForm.controls.phone.touched && contactForm.controls.phone.invalid){
+    <p>Field(s) Invalid</p>
+    }
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>

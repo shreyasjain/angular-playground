@@ -1,0 +1,8 @@
+<app-contact-form (contactAdded)="addContact($event)" [contactToEdit]="selectedContact"
+  (contactUpdated)="updateContact($event)"></app-contact-form>
+<h2>My Contacts({{totalContacts()}}) :</h2>
+<div class="d-flex flex-row flex-wrap gap-40">
+  @for (contact of contactService.contacts(); track contact.id){
+  <app-contact-card [contact]="contact" (delete)="deleteContact($event)" (edit)="editContact($event)" />
+  }
+</div>

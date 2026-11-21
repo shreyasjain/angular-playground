@@ -1,0 +1,12 @@
+<h1 class="mb-4">Count: {{counterService.count()}}</h1>
+<button type="button" class="btn btn-dark" (click)="counterService.increment()">Increment</button>
+<button type="button" [disabled]="counterService.count()===0" class="btn btn-dark mx-2" (click)="counterService.decrement()">Decrement</button>
+<h2 class="mt-4">
+  @if(loading()){
+  Loading...
+  }@else if(title()){
+  Title: {{title()}}
+  }@else if(error()){
+  Error: {{error()}}
+  }
+</h2>
