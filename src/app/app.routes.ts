@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Counter } from './components/counter/counter';
 import { ContactList } from './components/contact-list/contact-list';
+import { Playground } from './playground/playground';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path: 'contacts',
     component: ContactList
+  },
+  {
+    path: 'playground',
+    loadChildren: () => import('./playground/playground.routes').then(m => m.PLAYGROUND_ROUTES)
   },
   {
     path: '**',

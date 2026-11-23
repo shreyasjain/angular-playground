@@ -1,1 +1,4 @@
-<p>playground works!</p>
+<h1>Two way binding: </h1>
+<input type="text" [ngModel]="username()" (ngModelChange)="username.set($event)" class="my-4" />
+<h2 appHighlight>Username: {{username() | reverse:10}}</h2>
+<app-lifecycle-demo [username]="username()" ></app-lifecycle-demo>
